@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 import * as yaml from 'js-yaml';
-import { join } from 'path';
+import { join, resolve } from 'path';
 
 const YAML_CONFIG_FILENAME = 'config.yaml';
 
@@ -17,6 +17,10 @@ export interface ExpectedConfig {
 }
 
 export default (): ExpectedConfig => {
+  console.log(
+    'Reading config from ',
+    resolve(join('./', YAML_CONFIG_FILENAME)),
+  );
   return yaml.load(
     readFileSync(join('./', YAML_CONFIG_FILENAME), 'utf8'),
   ) as ExpectedConfig;
