@@ -1,0 +1,7 @@
+postgres:
+  host: localhost
+  username: postgres
+  password: postgres
+ym:
+  token: ym_oauth_token
+  counter: 123456
